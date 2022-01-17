@@ -1,0 +1,14 @@
+[alias]
+    lgn="!f() { git log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --; }; f"
+    lg="!f() { git log $1 -10 --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --; }; f"
+    s=status
+[user]
+	email = natan.votre@gmail.com
+	name = Natan Votre
+[push]
+    default = current
+[filter "lfs"]
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
