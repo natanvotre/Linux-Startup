@@ -26,6 +26,8 @@ Also update `Ubuntu Software` app.
 - PostgreSQL
 - MySQL
 - Vscode
+- Npm
+- NodeJS
 
 - docker
 - docker-compose
@@ -50,7 +52,10 @@ sudo apt install -y \
       zsh \
       postgresql postgresql-contrib \
       mysql-server \
-      obs-studio
+      obs-studio \
+      nodejs \
+      npm \
+      jq
 ```
 
 
@@ -61,7 +66,8 @@ sudo apt install pkg-config python3 \
       build-essential gdb lcov pkg-config \
       libbz2-dev libffi-dev libgdbm-dev libgdbm-compat-dev liblzma-dev \
       libncurses5-dev libreadline6-dev libsqlite3-dev libssl-dev \
-      lzma lzma-dev tk-dev uuid-dev zlib1g-dev
+      lzma lzma-dev tk-dev uuid-dev zlib1g-dev \
+      python3.8-venv
 ```
 
 [Docker](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-20-04):
@@ -139,7 +145,7 @@ gcloud config set compute/region us-central1
 
 - Plus, update the Cielo24 (this case) credentials using the customized functions:
 
-```
+```sh
 gcloud container clusters get-credentials core-cluster && mv ~/.kube/config ~/.kube/cielo-config/core-cluster.config
 gcloud container clusters get-credentials prod && mv ~/.kube/config ~/.kube/cielo-config/gcp-prod.config
 gcloud container clusters get-credentials c24-services --region us-central1 && mv ~/.kube/config ~/.kube/cielo-config/c24-services.config
