@@ -38,7 +38,6 @@ Also update `Ubuntu Software` app.
 
 - OBS Studio
 - Slack
-- Zulip
 - Zoom
 
 ### Through apt
