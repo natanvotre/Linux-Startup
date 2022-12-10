@@ -1,38 +1,93 @@
+
+# Install graphics card software
+
+```
+sudo mhwd -a pci nonfree 0300
+reboot
+```
+
+- https://linuxconfig.org/how-to-install-the-nvidia-drivers-on-manjaro-linux
+
+# Install Gnome latest version
+
+```
+sudo pacman -Suy
+sudo pacman -S gnome
+```
+
+Outside graphics (Alt-Ctrl-F4):
+
+```
+sudo systemctl disable lightdm.service
+sudo systemctl enable gdm.service
+```
+
+- https://wiki.archlinux.org/title/GNOME
+
 # Install basic programs
 
-- Git
+
+```
+sudo pacman -S git base-devel
+```
+
 - Vim
 - Emacs
 - Terminator
 - Zshell
-- Python3 dev tools
 - PostgreSQL
 - MySQL
-- Vscode
 - Npm
 - NodeJS
-
 - docker
 - docker-compose
 - kubectl
-- terraform
-- gcloud
+- k9s
 - aws
-
+- terraform
 - OBS Studio
+- dbeaver
+
+```
+sudo pacman -S vim emacs terminator zsh postgresql mysql npm docker docker-compose aws-cli obs-studio terraform
+```
+
+## Vscode
+
+```
+cd ~
+git clone https://aur.archlinux.org/visual-studio-code-bin.git
+cd visual-studio-code-bin
+makepkg
+sudo pacman -U <pack-name>
+```
+
+## gcloud
+
+```
+cd ~
+git clone https://aur.archlinux.org/google-cloud-sdk.git
+cd visual-studio-code-bin
+makepkg
+sudo pacman -U <pack-name>
+```
+
+## Using Gnome Software
+
 - Slack
 - Zoom
-
-- dbeaver
 - postman
+- google-chrome
 
-## TODO: show the pacman commands for each
+On the search bar, search for install. Opening the GNOME installer, install each one of the items.
 
-# Install graphics card software
+## configure Docker
 
-## TODO
+```
+reboot
+```
+- TODO:
 
-# Install Gnome latest version
 
 ## TODO
 
