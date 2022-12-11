@@ -1,0 +1,89 @@
+k9s:
+  refreshRate: 2
+  maxConnRetry: 5
+  enableMouse: false
+  headless: false
+  logoless: false
+  crumbsless: false
+  readOnly: false
+  noExitOnCtrlC: false
+  noIcons: false
+  logger:
+    tail: 100
+    buffer: 5000
+    sinceSeconds: 60
+    fullScreenLogs: false
+    textWrap: false
+    showTime: false
+  currentContext: gke_coinpanel-dev_europe-north1_tms-canary
+  currentCluster: gke_coinpanel-dev_europe-north1_tms-canary
+  clusters:
+    gke_coinpanel-dev_europe-north1_cp-dev-cluster-eu:
+      namespace:
+        active: all
+        lockFavorites: false
+        favorites:
+        - tms
+        - default
+      view:
+        active: pods
+      featureGates:
+        nodeShell: false
+      shellPod:
+        image: busybox:1.35.0
+        command: []
+        args: []
+        namespace: default
+        limits:
+          cpu: 100m
+          memory: 100Mi
+      portForwardAddress: localhost
+    gke_coinpanel-dev_europe-north1_tms-canary:
+      namespace:
+        active: tms
+        lockFavorites: false
+        favorites:
+        - tms
+        - default
+      view:
+        active: pods
+      featureGates:
+        nodeShell: false
+      shellPod:
+        image: busybox:1.35.0
+        command: []
+        args: []
+        namespace: default
+        limits:
+          cpu: 100m
+          memory: 100Mi
+      portForwardAddress: localhost
+    gke_coinpanel-prod_europe-north1_tms-canary:
+      namespace:
+        active: tms
+        lockFavorites: false
+        favorites:
+        - kube-system
+        - tms
+        - default
+      view:
+        active: pods
+      featureGates:
+        nodeShell: false
+      shellPod:
+        image: busybox:1.35.0
+        command: []
+        args: []
+        namespace: default
+        limits:
+          cpu: 100m
+          memory: 100Mi
+      portForwardAddress: localhost
+  thresholds:
+    cpu:
+      critical: 90
+      warn: 70
+    memory:
+      critical: 90
+      warn: 70
+  screenDumpDir: /tmp/k9s-screens-natan
